@@ -43,12 +43,13 @@ const modificarVenta = async (req, res) => {
         const id = req.params.id;
         const venta = await VentaModel.findById(id);
         if (venta) {
-            venta.fecha = req.body.fecha;
-            venta.hora = req.body.hora;
-            venta.plan = req.body.plan;
+            venta.id = req.body.id;
+            venta.importe = req.body.importe;
+            venta.letra = req.body.letra;
+            venta.prefijo = req.body.prefijo;
+            venta.numero = req.body.numero;
             const ventaActualizada = await venta.save();
             res.status(200).json("Venta Actualizada")
-            res.json(ventaActualizada)
         } else {
             res.status(404).json("Venta no encontrada");
         }

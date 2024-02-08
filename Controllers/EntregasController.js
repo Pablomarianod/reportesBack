@@ -44,12 +44,13 @@ const modificarEntrega = async (req, res) => {
         const id = req.params.id;
         const entrega = await EntregaModel.findById(id);
         if (entrega) {
-            entrega.fecha = req.body.fecha;
-            entrega.hora = req.body.hora;
-            entrega.plan = req.body.plan;
+            entrega.id = req.body.id;
+            entrega.importe = req.body.importe;
+            entrega.letra = req.body.letra;
+            entrega.prefijo = req.body.prefijo;
+            entrega.numero = req.body.numero;
             const entregaActualizada = await entrega.save();
             res.status(200).json("Entrega Actualizada")
-            res.json(entregaActualizada)
         } else {
             res.status(404).json("Entrega no encontrada");
         }
