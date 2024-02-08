@@ -45,10 +45,10 @@ const modificarEntrega = async (req, res) => {
         const entrega = await EntregaModel.findById(id);
         if (entrega) {
             entrega.id = req.body.id;
-            entrega.importe = req.body.importe;
-            entrega.letra = req.body.letra;
-            entrega.prefijo = req.body.prefijo;
-            entrega.numero = req.body.numero;
+            entrega.fecha = req.body.fecha;
+            entrega.sucursal = req.body.sucursal;
+            entrega.estado = req.body.estado;
+            entrega.numeroComprobante = req.body.numeroComprobante;
             const entregaActualizada = await entrega.save();
             res.status(200).json("Entrega Actualizada")
         } else {

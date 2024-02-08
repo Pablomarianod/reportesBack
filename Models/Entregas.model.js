@@ -7,20 +7,20 @@ const entregaSchema = new Schema({
         required: true,
         trim: true
     },
-    importe: {
-        type: Number,
+    fecha: {
+        type: String,
         required: true,
         trim: true
     },
-    letra: {
+    sucursal: {
         type: String,
         required: true,
     },
-    prefijo: {
-        type: Number,
+    estado: {
+        type: String,
         required: true,
     },
-    numero: {
+    numeroComprobante: {
         type: Number,
         required: true,
     }
